@@ -1,0 +1,662 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        direction: rtl;
+        font-family: Tahoma, Arial, sans-serif;
+    }
+    
+    body {
+        position: relative;
+    }
+    
+    .rightsidebar {
+        height: 100%;
+        width: 275px;
+        position: fixed;
+        right: 135px;
+        top: -10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    
+    svg {
+        height: 1.65rem;
+        display: inline-block;
+        margin-bottom: -4px;
+        margin-left: 15px;
+        font-weight: 50;
+    }
+    
+    p:hover {
+        fill: rgba(29, 161, 242, 1.00);
+    }
+    
+    .logo {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        margin-bottom: 25px;
+    }
+    
+    .logo i {
+        font-size: 30px;
+        display: inline-block;
+        color: rgba(29, 161, 242, 1.00);
+        margin-top: 20px;
+        margin-right: 30px;
+        transition: .2s;
+        cursor: pointer;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .lists {
+        margin-top: 8px;
+        padding: 10px;
+        width: 100%;
+    }
+    
+    .lists p {
+        margin: 18px;
+        font-weight: bold;
+        font-size: 20px;
+        transition: .2s;
+        width: 150px;
+        border-radius: 45px;
+        padding: 7px 5px;
+    }
+    
+    .lists p:hover {
+        background-color: rgba(29, 160, 242, 0.178);
+        color: rgba(29, 161, 242, 1.00);
+        cursor: pointer;
+    }
+    
+    .lists p:nth-child(1) {
+        margin-top: 2px;
+        color: rgba(29, 161, 242, 1.00);
+    }
+    
+    .lists p:nth-child(5) {
+        width: 240px;
+    }
+    
+    .lists p:nth-child(7) {
+        width: fit-content;
+    }
+    
+    .tweet {
+        display: block;
+        width: 86%;
+        height: 48px;
+        margin: 15px auto 0 auto;
+        font-size: 15px;
+        font-weight: 700;
+        font-family: Tahoma, Arial, sans-serif;
+        border-radius: 30px;
+        background-color: rgba(29, 161, 242, 1.00);
+        color: #fff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: .2s;
+    }
+    
+    .tweet:hover {
+        background-color: rgb(23, 144, 219);
+    }
+    
+    .account {
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+        margin-top: 32px;
+        height: 60px;
+        padding: 8px;
+        cursor: pointer;
+        border-radius: 50px;
+        transition: .2s;
+    }
+    
+    .account .img {
+        width: 40px;
+        height: 40px;
+        background: url(profile.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+    }
+    
+    .account:hover {
+        background-color: rgba(29, 160, 242, 0.178);
+    }
+    
+    .timeline {
+        width: 38%;
+        height: 100vh;
+        padding: 0 12px 0 12px;
+        margin: 0 auto;
+        border-right: 1px solid #eff3f4;
+        border-left: 1px solid #eff3f4;
+    }
+    
+    .firstrow {
+        margin-top: 5px;
+        padding: 15px 0 15px 0;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        border-bottom: 1px solid #eff3f4;
+    }
+    
+    #star {
+        display: block;
+        fill: rgba(29, 161, 242, 1.00);
+        height: 1.35rem;
+    }
+    
+    .secondrow {
+        display: flex;
+        width: 100%;
+        border-bottom: 11px solid #f5f5f5;
+        margin-top: 5px;
+    }
+    
+    .theimg {
+        margin: 5px;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        background: url(profile.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .input {
+        margin: 0 10px 0 0;
+    }
+    
+    input::placeholder {
+        font-size: 20px;
+    }
+    
+    .input input {
+        display: inline-block;
+        height: 48px;
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 20px;
+    }
+    
+    .createtweet {
+        display: inline-block;
+        margin-right: 170px;
+        border-radius: 50px;
+        height: 40px;
+        width: 65px;
+        font-size: 15px;
+        font-weight: bold;
+        background-color: rgba(29, 161, 242, 1.00);
+        transition: .2s;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        color: #fff;
+    }
+    
+    .createtweet:hover {
+        background-color: rgb(23, 144, 219);
+    }
+    
+    .theicons {
+        margin: 15px;
+    }
+    
+    .theicons svg {
+        height: 1.35rem;
+        fill: rgba(29, 161, 242, 1.00);
+    }
+    
+    .tweetwrap {
+        width: 75%;
+    }
+    
+    .firsttweet {
+        display: flex;
+        margin: 15px 0 0 0;
+        padding-bottom: 17px;
+        border-bottom: 1px solid #eeeeee;
+        width: 100%;
+    }
+    
+    .firstimg {
+        margin: 5px;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        background: url(L7_yOYc__400x400.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    span {
+        display: inline-block;
+    }
+    
+    .thouts {
+        margin: 4px 0;
+    }
+    
+    .userstatus svg {
+        height: 1.20rem;
+        fill: rgba(29, 161, 242, 1.00);
+        margin-left: -1px;
+    }
+    
+    .userstatus svg:last-of-type {
+        margin-right: 45%;
+    }
+    
+    .hasabo svg:last-of-type {
+        margin-right: 42%;
+        stroke: rgb(194, 193, 193);
+    }
+    
+    .ashi svg:last-of-type {
+        margin-right: 20%;
+        stroke: rgb(194, 193, 193);
+    }
+    
+    .userstatus span:first-child:hover {
+        border-bottom: 1px solid black;
+    }
+    
+    .reactions {
+        width: 100%;
+        margin: 17px 0 0 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .reactions div span {
+        display: inline-block;
+        margin-right: -15px;
+        color: #666464;
+    }
+    
+    .reactions svg {
+        height: 1.20rem;
+        stroke: rgb(194, 193, 193);
+        position: relative;
+    }
+    
+    .reactions svg:first-of-type:hover {
+        stroke: #1da1f2;
+    }
+    
+    svg {
+        cursor: pointer;
+    }
+    
+    .reactions svg:nth-child(2):hover {
+        stroke: #1fee7c;
+    }
+    
+    .reactions svg:nth-child(3):hover {
+        stroke: #e0245e;
+    }
+    
+    .reactions svg:nth-child(4):hover {
+        stroke: #1da1f2;
+    }
+    
+    .secondtweet .secondimg {
+        margin: 5px;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        background: url(ckqR8NOE_400x400.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .thirdtweet .thirdimg {
+        margin: 5px;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        background: url(ashi.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .firsttweet {
+        transition: .2s;
+    }
+    
+    .firsttweet:hover {
+        cursor: pointer;
+    }
+    
+    .firsttweet div:first-of-type:hover {
+        filter: opacity(0.8);
+    }
+    
+    .fourthtweet .fourthimg {
+        margin: 5px;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        background: url(profile.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .emam {
+        margin: 15px 0 0 0;
+        width: 100%;
+        height: 40vh;
+        border-radius: 13px;
+        background: url(emam.jfif);
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .rightsidebar p {
+        display: inline-block;
+        margin-right: -5px;
+        margin: 15px -4px 5px 0;
+        width: 220px;
+    }
+    
+    .leftbar {
+        top: 8px;
+        position: absolute;
+        left: 100px;
+        width: 350px;
+        height: 100vh;
+        transition: .8s;
+    }
+    
+    .leftbar .search {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    
+    .leftbar .search svg {
+        position: absolute;
+        height: 1.32rem;
+        stroke: #f7f9f9;
+        top: 12px;
+        right: 15px;
+    }
+    
+    .leftbar .search input {
+        display: inline-block;
+        width: 100%;
+        height: 45px;
+        border-radius: 50px;
+        background-color: #f1efef;
+        padding-right: 50px;
+        padding-left: 15px;
+        outline: none;
+        border: none;
+    }
+    
+    .leftbar .search input:focus {
+        border: 1px solid #1da1f2;
+    }
+    
+    .leftbar .search input::placeholder {
+        font-size: 17px;
+    }
+    
+    .trend {
+        height: 400px;
+        width: 350px;
+        background-color: #f7f9f9;
+        padding: 15px;
+        border-radius: 15px;
+    }
+    
+    .trend div:first-of-type {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #f1efef;
+    }
+    
+    .trend div p {
+        font-weight: bold;
+        font-size: 20px;
+    }
+    
+    .trend div p svg {
+        fill: #1da1f2;
+    }
+    
+    .trend div {
+        padding: 5px;
+        height: 19%;
+        transition: .4s;
+        cursor: pointer;
+        border-bottom: 1px solid #f1efef;
+    }
+    
+    .trend div:hover {
+        background-color: #7c7c7c11;
+    }
+    
+    .trend div:nth-child(2) {
+        border-bottom: 1px solid #f1efef;
+    }
+    
+    .trend div p {
+        display: flex;
+        justify-content: space-between;
+        margin: 9px 0 5px 0;
+        font-size: 16px;
+    }
+    
+    .trend div span {
+        font-size: 12px;
+        color: #7c7c7c;
+    }
+    
+    .following {
+        margin-top: 20px;
+        height: 300px;
+    }
+    
+    .following div {
+        height: 25%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #f1efef
+    }
+    
+    .following div:nth-child(1) {
+        height: 13%;
+        padding-bottom: 15px;
+    }
+    
+    .following div:nth-child(1) p {
+        font-size: 20px;
+    }
+    
+    .following .follow {
+        display: block;
+        height: 35px;
+        width: 80px;
+        border-radius: 50px;
+        outline: none;
+        color: #1da1f2;
+        border: 1px solid #1da1f2;
+        background-color: #f7f9f9;
+        font: 15px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: .2s;
+    }
+    
+    .follow:hover {
+        background-color: #9ac5f169;
+    }
+    
+    .showmore {
+        padding: 10px;
+        color: #1da1f2;
+        cursor: pointer;
+    }
+    
+    @media screen and (max-width: 1500px) {
+        .leftbar {
+            top: 8px;
+            position: absolute;
+            left: 10px;
+            width: 300px;
+            height: 100vh;
+            transition: 2s;
+        }
+        .leftbar .trend {
+            width: 100%;
+        }
+        .leftbar .search input {
+            width: 100%;
+        }
+        .createtweet {
+            margin-right: 0px;
+            height: 35px;
+            width: 55px;
+        }
+        .rightsidebar {
+            right: 0;
+            width: 250px;
+            overflow-y: scroll;
+        }
+    }
+    
+    @media screen and (max-width: 1030px) {
+        .leftbar {
+            display: none;
+        }
+        .timeline {
+            width: 50%;
+            height: auto;
+            margin-left: 0;
+        }
+        .userstatus svg:last-of-type {
+            display: none;
+        }
+        .createtweet {
+            margin-right: 0px;
+            height: 35px;
+            width: 55px;
+        }
+        .timeline {
+            width: 70%;
+            height: auto;
+        }
+        .rightsidebar {
+            right: 190px;
+            width: 50px;
+            overflow-y: hidden;
+            border-right: 1px solid #eff3f4;
+            padding: 5px;
+        }
+        .logo i {
+            margin-right: 10px;
+        }
+        .container {
+            margin-left: 100px;
+        }
+        .personal {
+            visibility: hidden;
+        }
+    }
+    
+    @media screen and (max-width: 935px) {
+        .rightsidebar {
+            right: 0;
+            width: 50px;
+            overflow-y: hidden;
+        }
+        .timeline {
+            width: 90%;
+            height: auto;
+            margin-left: 0;
+        }
+        .account .content h5,
+        .account .more {
+            display: none;
+        }
+        .account .img {
+            width: 70px;
+        }
+        .leftbar {
+            display: none;
+        }
+        .createtweet {
+            margin-right: 0px;
+            height: 35px;
+            width: 55px;
+        }
+        .userstatus svg:last-of-type {
+            display: none;
+        }
+        .logo i {
+            margin-right: 10px;
+        }
+        .personal {
+            visibility: hidden;
+        }
+    }
+    
+    @media screen and (max-width: 640px) {
+        .rightsidebar {
+            right: 0;
+            width: 50px;
+            overflow-y: hidden;
+            padding: 3px;
+        }
+        .timeline {
+            width: 90%;
+            height: auto;
+            position: absolute;
+            left: 0;
+        }
+        .account .content h5,
+        .account .more {
+            display: none;
+        }
+        .account .img {
+            width: 70px;
+        }
+        .leftbar {
+            display: none;
+        }
+        .createtweet {
+            margin-right: 0px;
+            height: 35px;
+            width: 55px;
+        }
+        .userstatus svg:last-of-type {
+            display: none;
+        }
+        .logo i {
+            margin-right: 10px;
+        }
+        .personal {
+            visibility: hidden;
+        }
+    }
